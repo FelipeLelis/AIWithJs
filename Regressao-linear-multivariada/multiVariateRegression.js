@@ -18,19 +18,6 @@ module.exports = class multiVariateRegression {
         this._config.output = this.Y;
     }
 
-    saveModel(path = './model.json') {
-        const fs = require('fs')
-        fs.writeFileSync(path, JSON.stringify(this._config))
-    }
-
-    loadModel(path = './model.json') {
-        const fs = require('fs')
-        const data = fs.readFileSync(path, 'utf8')
-        const json = JSON.parse(data)
-        this.X = json.input
-        this.Y = json.output
-    }
-
     produto(x = [], y = []) {
         let temp = [];
         for (let i = 0; i < x.length; i++)
